@@ -1,0 +1,90 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(ggplot2)
+# initialize ggplot
+```
+```{r}
+titanic <- read_csv("C:/Users/preet/OneDrive/Documents/train.csv")
+```
+```{r}
+library(readr)
+```
+```{r}
+names(titanic)
+```
+
+```{r}
+titanic
+```
+```{r}
+
+```
+
+
+```{r}
+ggplot(titanic) + geom_bar(aes(x = Sex, fill = Sex))
+```
+
+
+```{r}
+ggplot(titanic) + geom_bar(aes(x = Ticket, fill = Sex))
+```
+
+
+```{r}
+ggplot(titanic) + geom_bar(aes(Sex, fill = Survived))
+```
+
+```{r}
+ggplot(titanic) +geom_bar(aes(Sex, fill = Survived), position = "fill")
+```
+
+```{r}
+# create a histogram plot with geom_historgram()
+ggplot(titanic, aes(x = Age)) + geom_histogram()
+```
+
+
+```{r}
+ggplot(titanic, aes(x = Fare)) + geom_histogram()
+```
+
+
+```{r}
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(forcats)
+```
+
+
+```{r}
+p <- ggplot(titanic, aes(x=Age, y=Sex)) + 
+  geom_violin()
+p
+```
+
+
+```{r}
+p <- ggplot(titanic, aes(x=Age, y=Pclass))+ geom_violin()
+p
+```
+
+
+```{r}
+ggplot(titanic) + geom_bar(aes(x = Pclass, fill = Cabin))
+```
+```{r}
+
+```
+
+
